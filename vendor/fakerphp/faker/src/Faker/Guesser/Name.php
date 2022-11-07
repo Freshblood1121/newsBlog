@@ -4,14 +4,14 @@ namespace Faker\Guesser;
 
 use Faker\Provider\Base;
 
-class Name extends \App\Person\Name
+class Name
 {
-    protected string $user;
+    private string $firstName;
     private string $lastName;
 
-    public function __construct( string $user, string $lastName)
+    public function __construct( string $firstName, string $lastName)
     {
-        $this->user = $user;
+        $this->firstName = $firstName;
         $this->lastName = $lastName;
     }
     /**
@@ -177,5 +177,10 @@ class Name extends \App\Person\Name
         }
 
         return null;
+    }
+
+    public function __toString()
+    {
+        return $this->firstName . " " . $this->lastName;
     }
 }

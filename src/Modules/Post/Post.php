@@ -6,16 +6,23 @@ use App\Modules\User\User;
 
 class Post
 {
+    private int $id;
+    private User $user;
+    private string $text;
+
     public function __construct(
-        private int $id,
-        private User $user,
-        private string $text
+        int $id,
+        User $user,
+        string $text
     ) {
+        $this->id = $id;
+        $this->user = $user;
+        $this->text = $text;
     }
 
     public function __toString(): string
     {
-        return $this->user . ' пишет: ' . $this->text;
+        return $this->user . 'Пишет пост: ' . $this->text;
     }
 
     /**

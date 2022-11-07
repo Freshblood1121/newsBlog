@@ -7,17 +7,19 @@ use Faker\Guesser\Name;
 class User
 {
     private int $id;
-    private Name $username;
-    private string $login;
+    private string $username;
+    private Name $login;
+
     /**
      * @param int $id
      * @param Name $username
      * @param string $login
      */
+
     public function __construct(
         int $id,
-        Name $username,
-        string $login
+        string $username,
+        Name $login
     ) {
         $this->id = $id;
         $this->username = $username;
@@ -26,7 +28,7 @@ class User
 
     public function __toString(): string
     {
-        return "Пользователь $this->id c именем $this->username и логином $this->login" . PHP_EOL;
+        return "Пользователь $this->id" . PHP_EOL . "Почта: " . $this->username . PHP_EOL . "Логин: " . $this->login . PHP_EOL;
     }
 
     /**
@@ -52,5 +54,4 @@ class User
     {
         $this->id = $id;
     }
-
 }
