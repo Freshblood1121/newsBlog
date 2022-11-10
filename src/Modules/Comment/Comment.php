@@ -2,10 +2,11 @@
 
 namespace App\Modules\Comment;
 
+use App\Contracts\addInterface;
 use App\Modules\Post\Post;
 use App\Modules\User\User;
 
-class Comment
+class Comment implements addInterface
 {
     public function __construct(
         private int $id,
@@ -83,5 +84,4 @@ class Comment
     {
         $this->text = $text;
     }
-
 }

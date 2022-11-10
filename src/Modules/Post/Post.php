@@ -2,9 +2,10 @@
 
 namespace App\Modules\Post;
 
+use App\Contracts\addInterface;
 use App\Modules\User\User;
 
-class Post
+class Post implements addInterface
 {
     public function __construct(
         private int $id,
@@ -65,5 +66,4 @@ class Post
     {
         $this->text = $text;
     }
-
 }

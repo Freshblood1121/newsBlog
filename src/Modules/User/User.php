@@ -2,20 +2,20 @@
 
 namespace App\Modules\User;
 
-use Faker\Guesser\Name;
+use App\Contracts\addInterface;
 
-class User
+class User implements addInterface
 {
     public function __construct(
         private int $id,
         private string $username,
-        private Name $login
+        private string $email
     ) {
     }
 
     public function __toString(): string
     {
-        return "Пользователь $this->id" . PHP_EOL . "Почта: " . $this->username . PHP_EOL . "Логин: " . $this->login . PHP_EOL;
+        return "Пользователь $this->id" . PHP_EOL . "Почта: " . $this->username . PHP_EOL . "Логин: " . $this->email . PHP_EOL;
     }
 
     /**
@@ -51,19 +51,18 @@ class User
     }
 
     /**
-     * @return Name
+     * @return string
      */
-    public function getLogin(): Name
+    public function getEmail(): string
     {
-        return $this->login;
+        return $this->email;
     }
 
     /**
-     * @param Name $login
+     * @param string $email
      */
-    public function setLogin(Name $login): void
+    public function setEmail(string $email): void
     {
-        $this->login = $login;
+        $this->email = $email;
     }
-
 }
