@@ -7,21 +7,12 @@ use App\Modules\User\User;
 
 class Comment
 {
-    private int $id;
-    private User $user;
-    private Post $post;
-    private string $text;
-
     public function __construct(
-        int $id,
-        User $user,
-        Post $post,
-        string $text
+        private int $id,
+        private User $user,
+        private Post $post,
+        private string $text
     ) {
-        $this->id =$id;
-        $this->user = $user;
-        $this->post = $post;
-        $this->text = $text;
     }
 
     public function __toString(): string

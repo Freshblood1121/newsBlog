@@ -25,33 +25,22 @@ $post = new Post(
     $faker->realText(rand(50,100))
 );
 
+$comment = new Comment(
+    $faker->randomDigitNotNull,
+    $user,
+    $post,
+    $faker->realText(rand(10,40))
+);
+
 $route = $argv[1] ?? null;
 
-//Структура запросов
-switch (strtolower($route)) {
-    case "name":
-        echo $name;
-        break;
-    case "user":
-        echo $user;
-        break;
-    case "post":
-        echo $post;
-        break;
-    case "comment":
-        $post = new Post(
-            $faker->randomDigitNotNull,
-            $user,
-            $faker->realText(rand(50,100))
-        );
-        $comment = new Comment(
-            $faker->randomDigitNotNull,
-            $user,
-            $post,
-            $faker->realText(rand(10,40))
-        );
-        echo $comment;
-        break;
-    default:
-        echo "Error try User, Post, Comment parametr";
-}
+//Структура запросов(switch поменял на match)
+$result = match (strtolower($route))
+{
+    "name" => $name,
+    "user" => $user,
+    "post" => $post,
+    "comment" => $comment,
+    default => 'Error try User, Post, Comment parametr'
+};
+echo $result;

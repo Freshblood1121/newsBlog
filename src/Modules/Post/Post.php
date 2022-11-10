@@ -6,18 +6,11 @@ use App\Modules\User\User;
 
 class Post
 {
-    private int $id;
-    private User $user;
-    private string $text;
-
     public function __construct(
-        int $id,
-        User $user,
-        string $text
+        private int $id,
+        private User $user,
+        private string $text
     ) {
-        $this->id = $id;
-        $this->user = $user;
-        $this->text = $text;
     }
 
     public function __toString(): string
@@ -28,7 +21,7 @@ class Post
     /**
      * @return int
      */
-    public function id(): int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -72,4 +65,5 @@ class Post
     {
         $this->text = $text;
     }
+
 }

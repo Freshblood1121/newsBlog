@@ -6,24 +6,11 @@ use Faker\Guesser\Name;
 
 class User
 {
-    private int $id;
-    private string $username;
-    private Name $login;
-
-    /**
-     * @param int $id
-     * @param Name $username
-     * @param string $login
-     */
-
     public function __construct(
-        int $id,
-        string $username,
-        Name $login
+        private int $id,
+        private string $username,
+        private Name $login
     ) {
-        $this->id = $id;
-        $this->username = $username;
-        $this->login = $login;
     }
 
     public function __toString(): string
@@ -32,19 +19,11 @@ class User
     }
 
     /**
-     * @return Name
+     * @return int
      */
-    public function getUsername(): Name
+    public function getId(): int
     {
-        return $this->username;
-    }
-
-    /**
-     * @param Name $username
-     */
-    public function setUsername(Name $username): void
-    {
-        $this->username = $username;
+        return $this->id;
     }
 
     /**
@@ -54,4 +33,37 @@ class User
     {
         $this->id = $id;
     }
+
+    /**
+     * @return string
+     */
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return Name
+     */
+    public function getLogin(): Name
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param Name $login
+     */
+    public function setLogin(Name $login): void
+    {
+        $this->login = $login;
+    }
+
 }
