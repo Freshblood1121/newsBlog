@@ -3,15 +3,11 @@
 use App\Modules\Comment\Comment;
 use App\Modules\Post\Post;
 use App\Modules\User\User;
-use Faker\Guesser\Name;
 
 $faker = Faker\Factory::create('ru_RU');
 
 //Заготовки
-$name = new Name(
-    $faker->firstName("female"),
-    $faker->lastName("female")
-);
+$name = $faker->firstName("female") . " " . $faker->lastName("female");
 
 $user = new User(
     $faker->randomDigitNotNull,
