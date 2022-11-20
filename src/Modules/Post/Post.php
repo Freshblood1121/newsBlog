@@ -3,28 +3,16 @@
 namespace App\Modules\Post;
 
 use App\Contracts\addInterface;
+use App\Modules\Comment\interfaceComment;
 use App\Modules\User\User;
 
-class Post implements addInterface
+class Post extends interfacePost
 {
     public function __construct(
-        private int $id,
-        private User $user,
-        private string $text
+        protected int $id,
+        protected User $user,
+        protected string $text
     ) {
-    }
-
-    public function __toString(): string
-    {
-        return $this->user . 'Пишет пост: ' . $this->text;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
     }
 
     /**

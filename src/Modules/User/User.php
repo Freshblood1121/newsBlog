@@ -4,26 +4,13 @@ namespace App\Modules\User;
 
 use App\Contracts\addInterface;
 
-class User implements addInterface
+class User extends interfaceUser
 {
     public function __construct(
-        private int $id,
-        private string $username,
-        private string $email
+        protected int $id,
+        protected string $username,
+        protected string $email
     ) {
-    }
-
-    public function __toString(): string
-    {
-        return "Пользователь $this->id" . PHP_EOL . "Почта: " . $this->username . PHP_EOL . "Логин: " . $this->email . PHP_EOL;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
     }
 
     /**

@@ -6,27 +6,14 @@ use App\Contracts\addInterface;
 use App\Modules\Post\Post;
 use App\Modules\User\User;
 
-class Comment implements addInterface
+class Comment extends interfaceComment
 {
     public function __construct(
-        private int $id,
-        private User $user,
+        protected int $id,
+        protected User $user,
         private Post $post,
-        private string $text
+        protected string $text
     ) {
-    }
-
-    public function __toString(): string
-    {
-        return $this->user . 'Пишет комментарий: ' . $this->text;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
     }
 
     /**
