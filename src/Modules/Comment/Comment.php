@@ -2,7 +2,6 @@
 
 namespace App\Modules\Comment;
 
-use App\Contracts\addInterface;
 use App\Modules\Post\Post;
 use App\Modules\User\User;
 

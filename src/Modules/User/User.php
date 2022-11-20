@@ -2,8 +2,6 @@
 
 namespace App\Modules\User;
 
-use App\Contracts\addInterface;
-
 class User extends interfaceUser
 {
     public function __construct(

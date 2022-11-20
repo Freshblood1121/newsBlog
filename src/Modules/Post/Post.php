@@ -2,8 +2,6 @@
 
 namespace App\Modules\Post;
 
-use App\Contracts\addInterface;
-use App\Modules\Comment\interfaceComment;
 use App\Modules\User\User;
 
 class Post extends interfacePost
