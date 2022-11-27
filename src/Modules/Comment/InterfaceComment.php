@@ -2,9 +2,9 @@
 
 namespace App\Modules\Comment;
 
-use App\Contracts\addInterface;
+use App\Contracts\a\AddInterface;
 
-class interfaceComment implements addInterface
+class InterfaceComment implements AddInterface
 {
     public function __toString(): string
     {
