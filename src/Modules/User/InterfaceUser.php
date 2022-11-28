@@ -6,16 +6,4 @@ use App\Contracts\AddInterface;
 
 interface interfaceUser implements AddInterface
 {
-    public function __toString(): string
-    {
-        return "Пользователь $this->id" . PHP_EOL . "Почта: " . $this->username . PHP_EOL . "Логин: " . $this->email . PHP_EOL;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
 }
