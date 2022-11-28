@@ -4,7 +4,7 @@ namespace App\Modules\Post;
 
 use App\Modules\User\User;
 
-class Post extends interfacePost
+class Post implements InterfacePost
 {
     public function __construct(
         protected int $id,
@@ -12,7 +12,20 @@ class Post extends interfacePost
         protected string $text
     ) {
     }
+     
+    public function __toString(): string
+    {
+        return $this->user . 'Пишет пост: ' . $this->text;
+    }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+    
     /**
      * @param int $id
      */
