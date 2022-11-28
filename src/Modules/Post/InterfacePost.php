@@ -2,9 +2,9 @@
 
 namespace App\Modules\Post;
 
-use App\Contracts\addInterface;
+use App\Contracts\AddInterface;
 
-class interfacePost implements addInterface
+interface InterfacePost implements AddInterface
 {
     public function __toString(): string
     {
