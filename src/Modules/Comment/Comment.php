@@ -5,7 +5,7 @@ namespace App\Modules\Comment;
 use App\Modules\Post\Post;
 use App\Modules\User\User;
 
-class Comment extends interfaceComment
+class Comment implements InterfaceComment
 {
     public function __construct(
         protected int $id,
@@ -14,7 +14,15 @@ class Comment extends interfaceComment
         protected string $text
     ) {
     }
-
+    
+    public function __toString(): string
+    {
+        return $this->user . 'Пишет комментарий: ' . $this->text;
+    }
+    public function getId(): int
+    {
+        return $this->id;
+    }
     /**
      * @param int $id
      */
