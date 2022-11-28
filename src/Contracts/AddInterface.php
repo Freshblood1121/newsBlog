@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface addInterface
+interface AddInterface
 {
     public function __toString();
     public function getId();
