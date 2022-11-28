@@ -2,9 +2,9 @@
 
 namespace App\Modules\User;
 
-use App\Contracts\addInterface;
+use App\Contracts\AddInterface;
 
-class interfaceUser implements addInterface
+interface interfaceUser implements AddInterface
 {
     public function __toString(): string
     {
