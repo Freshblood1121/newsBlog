@@ -4,7 +4,7 @@ namespace App\Modules\Comment;
 
 use App\Contracts\a\AddInterface;
 
-class InterfaceComment implements AddInterface
+interface InterfaceComment implements AddInterface
 {
     public function __toString(): string
     {
